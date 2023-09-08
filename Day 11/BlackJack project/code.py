@@ -64,9 +64,9 @@ def play_game():
 
 
         if user_score == 0:
-            print("Jackblack !!! You Win")
+            print("BlackJack !!! You Win")
         elif computer_score == 0:
-            print("jackblack !!! Computer Win")
+            print("BlackJack !!! Computer Win")
 
 
         if user_score > computer_score and user_score <21 and computer_score <21:
