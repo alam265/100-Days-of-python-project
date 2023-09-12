@@ -31,11 +31,7 @@ while race_is_on == True:
     for t in turtles:
         if t.xcor() > 230:
             race_is_on = False 
-            turtle_color = t.pencolor()
-            if u_input == turtle_color:
-                print(f"Yes! You win. {turtle_color} turtle is the winner")
-            else:
-                print(f"You lost. {turtle_color} turtle is the winner")
+            break
 
 
         speed = random.randint(1,10)
@@ -51,9 +47,15 @@ for turtle in turtles:
 
 distance.sort(reverse=True)
 
-print("Race Details:")
+if u_input == dic[distance[0]]:
+    print(f"Yes You win!\n{dic[distance[0]]} turtle is the winner!!")
+else:
+    print(f"You lost\n{dic[distance[0]]} turtle is the winner!!")
+
+
+print("\nRace Details:")
 for i in range(7):
-    print(f"{dic[distance[i]]} obtainded position: {i+1}" )
+    print(f"{dic[distance[i]]} turtle obtainded position: {i+1}" )
 
 
 
