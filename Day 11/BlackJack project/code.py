@@ -58,15 +58,26 @@ def play_game():
         computer_score = sum(computer_cards)
 
     def compare(user_score,computer_score):
-
-        print(f"Your Final Score: {user_score}, Final hand: {user_cards}")
-        print(f"Computer Final Score: {computer_score}, Final hand: {computer_cards}")
+        if user_score == 0 :
+            print(f"Your Final Score: {21}, Final hand: {user_cards}")
+            print(f"Computer Final Score: {computer_score}, Final hand: {computer_cards}")
+        
+        elif computer_score==0:
+            print(f"Your Final Score: {user_score}, Final hand: {user_cards}")
+            print(f"Computer Final Score: {21}, Final hand: {computer_cards}")
+        
+        else:
+            print(f"Your Final Score: {user_score}, Final hand: {user_cards}")
+            print(f"Computer Final Score: {computer_score}, Final hand: {computer_cards}")
+           
 
 
         if user_score == 0:
             print("BlackJack !!! You Win")
         elif computer_score == 0:
             print("BlackJack !!! Computer Win")
+        elif user_score == computer_score:
+            print("Draw")
 
 
         elif user_score > computer_score and user_score <21 and computer_score <21:
@@ -79,8 +90,6 @@ def play_game():
         elif computer_score >21:
             print("You Win")
 
-        if user_score == computer_score:
-            print("Draw")
 
     compare(user_score,computer_score)
 
