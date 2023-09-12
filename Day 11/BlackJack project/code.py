@@ -69,12 +69,12 @@ def play_game():
             print("BlackJack !!! Computer Win")
 
 
-        if user_score > computer_score and user_score <21 and computer_score <21:
+        elif user_score > computer_score and user_score <21 and computer_score <21:
             print("You win")
         elif user_score < computer_score and user_score <21 and computer_score <21:
             print("Computer Win")
 
-        if user_score >21 :
+        elif user_score >21 :
             print("Computer Win")
         elif computer_score >21:
             print("You Win")
