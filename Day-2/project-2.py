@@ -10,4 +10,4 @@ bill_with_tip = bill *(percentage/100) + bill
 each_should_pay = bill_with_tip / people
 
 
-print("Each one should pay:",round(each_should_pay,2))
+print("Each one should pay:",round(each_should_pay,2)) 
