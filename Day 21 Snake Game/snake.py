@@ -26,6 +26,17 @@ class Snake:
             new_y = self.segments[i-1].ycor()
             self.segments[i].goto(new_x,new_y)
         self.segments[0].forward(MOVE_DISTANCE)
+    
+    def increase_snake_size(self):
+        tim = Turtle(shape='square')
+        tim.color("white")
+        tim.penup()
+        last_x,last_y = self.segments[-1].position()
+        tim.goto(x = last_x, y = last_y)
+        
+        self.segments.append(tim) 
+
+        
 
     def up(self):
         if self.segments[0].heading() != DOWN:
