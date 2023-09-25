@@ -1,6 +1,7 @@
 from replit import clear
 board = [[1,2,3],[4,5,6],[7,8,9]]
 
+lst = []
 
 def checkVertical(board):
     if board[0][0] == board[1][0] == board[2][0] or board[0][1] == board[1][1] == board[2][1] or board[0][2] == board[1][2] == board[2][2]:
@@ -38,12 +39,16 @@ while game_is_on and total_turn!=0:
     
     if first_player_turn == True:
         inp = int(input("1st player turn('X'). Enter position "))
-        placeOnBoard(board,inp,"X")
-        clear()
-        printBoard(board)
-        total_turn-=1
-        first_player_turn = False 
-        Second_player_turn = True  
+        if inp not in lst:
+            placeOnBoard(board,inp,"X")
+            clear()
+            printBoard(board)
+            lst.append(inp)
+            total_turn-=1
+            first_player_turn = False 
+            Second_player_turn = True  
+        else:
+             print(f"{inp} pos is already filled up. Enter in empty location")
 
         if checkDiagonal(board) == 1 or checkHorizontal(board) == 1 or checkVertical(board)==1:
             clear()
@@ -54,13 +59,16 @@ while game_is_on and total_turn!=0:
     
     elif  Second_player_turn == True:
         inp = int(input("2nd player turn('O') . Enter position "))
-        placeOnBoard(board,inp,"O")
-        clear()
-        printBoard(board)
-        total_turn-=1
-        first_player_turn = True  
-        Second_player_turn = False 
-        
+        if inp not in lst:
+            placeOnBoard(board,inp,"O")
+            lst.append(inp)
+            clear()
+            printBoard(board)
+            total_turn-=1
+            first_player_turn = True  
+            Second_player_turn = False 
+        else:
+             print(f"{inp} pos is already filled up. Enter in empty location")
         
         if checkDiagonal(board) == 1 or checkHorizontal(board) == 1 or checkVertical(board)==1:
             clear()
@@ -73,7 +81,6 @@ while game_is_on and total_turn!=0:
 if total_turn == 0:
     print("Match Draw")
     printBoard(board)
-
 
 
     
